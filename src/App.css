@@ -1,0 +1,99 @@
+/* Application */
+.application{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+/* App end */
+
+/* Form new employer section */
+section.application>button {
+    position: absolute;
+    transform: translate(240%, 150%);
+    transition: 0s;
+}
+
+form.newEmployer{
+    width: 78%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    visibility: visible;
+    transition: 0s;
+}
+form.newEmployer.hidden{
+    visibility: hidden;
+}
+
+form.newEmployer>* {
+    width: 35%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    
+}
+
+input[type=submit], button{
+    width: 20%;
+    box-sizing: border-box;
+    margin: 0 50px;
+    height: 30px;
+    justify-content: center;
+    text-transform: capitalize;
+    background: #e8e7f7;
+    outline: none;
+    border: 1px solid #e8e7f7;
+    border-radius: 10px;
+}
+select{
+    width: 51%;
+}
+/* Form new employer section end */
+
+/* Chart section */
+.chart_section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 3% auto;
+}
+.recharts-wrapper{
+    border: 1px solid black;
+}
+.recharts-wrapper>svg{
+    padding-top: 8%;
+    height: 90%;
+}
+.recharts-wrapper:first-child::before{
+    content: "Employees by Job Title";
+    background-color: white;
+    position: absolute;
+    transform: translate(20%, -60%);
+}
+.recharts-wrapper:last-child::before{
+    content: "Employees by Gender";
+    background-color: white;
+    position: absolute;
+    transform: translate(20%, -60%);
+}
+/* Chart section end */
+
+/* Table */
+table{
+    margin: 50px auto;
+    width: 78%;
+    height: 10%;
+    overflow-y: scroll;
+}
+
+thead {
+    background-color: rgba(136, 132, 216, 0.75);
+}
+tr:nth-child(even) {
+    background-color: #a6a3e242;
+}
+td {
+    padding-left: 15px;
+}
+/* Table end */
