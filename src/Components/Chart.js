@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, Bar, BarChart, XAxis, YAxis, Legend } from "recharts"
+import { PieChart, Pie, Cell, Bar, BarChart, XAxis, YAxis } from "recharts"
 import "./../App.css"
 export default function Chart (props) {
     const employees_array = props.values;

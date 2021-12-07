@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { useSortBy, useTable } from "react-table";
-import { useCookies } from "react-cookie"
 import { COLUMNS } from "./columns"
 
 export default function Table (props){
@@ -8,13 +7,14 @@ export default function Table (props){
     const columnsTitle = useMemo(()=> COLUMNS, []);
 
     // create cookies for safe sorting data
-    const [cookies, setCookies, removeCookies] = useCookies(["column", "desc"]);
-    let desc = (cookies.desc == 0) ? false : true;
+    
+    let desc = (localStorage.getItem("column") == 0) ? false : true;
+    
 
     const initialState = {
         sortBy:[
             {
-                id: cookies.column,
+                id: localStorage.getItem("column"),
                 desc: desc
             }
         ]
@@ -45,13 +45,11 @@ export default function Table (props){
                                     let id = "", desc="";
                                     if (column.isSorted) {
                                         id = column.id;
-                                        desc = column.isSortedDesc ? '1' : '0';
+                                        desc = column.isSortedDesc ? '1' : '0'
                                     }
-                                    if (id==="") {
-                                        removeCookies()
-                                    }else {
-                                        setCookies("column", id);
-                                        setCookies("desc", desc)
+                                    if (id!=="") {
+                                        localStorage.setItem("column", id);
+                                        localStorage.setItem("desc", desc)
                                     }
                                     return (<th {...column.getHeaderProps(column.getSortByToggleProps())} >
                                         {
