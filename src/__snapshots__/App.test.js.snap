@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing App App with form snapshot 1`] = `undefined`;
+
+exports[`testing App App without form snapshot 1`] = `undefined`;
